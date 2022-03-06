@@ -8,8 +8,13 @@
     <h1>All Pages</h1>
 
     <ul>
+        {% if not entries %}
+          <h3>No matches</h3>
+        {%endif%}
         {% for entry in entries %}
-        <li><a href="{{entry}}">{{ entry }}</a></li>
+        <li><a href="{{entry}}">{{ entry }}</a>
+            <a href="{% url 'edit_page' entry %}" name={{entry}}><i><u>"edit page"</u></i></a>
+        </li>
         {% endfor %}
     </ul>
 
