@@ -34,7 +34,7 @@ def edit_page(request, name):
 def save_page(request):
     if request.method =="POST":
         title = request.POST["title"]
-        text = "#"+title+"\n"+request.POST["body"]
+        text = request.POST["body"]
         util.save_entry(title, text)
         return explore(request, title)
     
@@ -52,10 +52,7 @@ def explore(request, title):
          })
 def random_page(request):
     title = random.choice(util.list_entries())
-    return render(request, "encyclopedia/title.html", {
-        "title":"",
-        "page": util.get_entry(title)
-        })
+    return explore(request, title)
     
 def search(request):
     q_text = request.POST['q']
