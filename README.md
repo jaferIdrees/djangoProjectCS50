@@ -11,7 +11,7 @@
 
 ## Live Demo 
 
-[Live Demo Link](https://jaferidrees.github.io/To-Do-List/)
+[Live Demo Link](https://jaferidrees.github.io/djangoProjectCS50/)
 
 
 ## Getting Started
